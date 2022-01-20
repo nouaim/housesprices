@@ -13,3 +13,8 @@ this is found on the In-sample.py file
 ## Second attempt with practical model by spliting training and validation data
 
 This is found on the model.py file
+
+
+## Third attempt 
+
+Determine best tree size and train the model again
