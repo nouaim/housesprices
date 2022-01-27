@@ -30,10 +30,10 @@ from sklearn.impute import SimpleImputer
 
 from sklearn.model_selection import cross_val_score
 
-def get_mae(train_X, val_X, train_y, val_y):
+def get_score(n_estimators):
     
     my_pipeline = Pipeline(steps=[('preprocessor', SimpleImputer()),
-                              ('model', RandomForestRegressor(n_estimators=50,
+                              ('model', RandomForestRegressor(n_estimators,
                                                               random_state=0))
                              ])
 
@@ -47,4 +47,16 @@ def get_mae(train_X, val_X, train_y, val_y):
     
     #Error = mean_absolute_error(prediction, val_y)
     return scores
-get_mae(train_X, val_X, train_y, val_y)
+print('score with a number of estimators 30: ',get_score(30))
+
+
+a= [50,100,150,200,250,300,350,400]
+results = {}
+for i in range(len(a)):
+    results[a[i]] = get_score(a[i]) # Your code here
+
+import matplotlib.pyplot as plt
+#%matplotlib inline
+
+plt.plot(list(results.keys()), list(results.values()))
+plt.show()

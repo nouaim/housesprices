@@ -30,4 +30,6 @@ Error = 236940
 
 ## Fourth attempt
 
-###Using a Pipline to impute missing numerical values and cross-validation
+###Using a Pipline to impute missing numerical values and cross-validation  /it{improvemore.py}
+
+Using different numbers of estimators and ploting the scores
